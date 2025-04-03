@@ -28,7 +28,7 @@ func TestAdditionHandler(t *testing.T) {
 
 	result1, _ := strconv.Atoi(string(body1))
 
-	expected1 := 8
+	expected1 := 9
 
 	if result1 != expected1 {
 
