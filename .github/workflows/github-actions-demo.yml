@@ -1,9 +1,19 @@
-name: Demo GitHub Action
+   steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v3
 
-on: [push]
+    - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
 
-jobs:
-  say-hello:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "¡Hola desde GitHub Actions!"
+    - name. List files in the repository
+      run: |
+        ls ${{ github.workspace }}
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with: 
+        go-version: '1.21.5'
+
+    - name: Build
+      run: go build -v ./...
+
+    - run: echo "This job's status is ${{ job.status }}."
